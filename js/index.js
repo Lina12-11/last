@@ -38,6 +38,14 @@ function initSlider() {
     }, 5000);
 }
 
+// 购物车功能
+let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+const cartCount = document.querySelector('.cart-count');
+
+function updateCartCount() {
+    cartCount.textContent = cartItems.length;
+}
+
 // 商品加载功能
 function loadProducts() {
     // 模拟商品数据
@@ -51,7 +59,42 @@ function loadProducts() {
             badge: "热销",
             image: "https://via.placeholder.com/300x200?text=荒野大镖客2"
         },
-        // 可以添加更多商品数据...
+        {
+            id: 2,
+            title: "黑悟空：神话",
+            category: "动作游戏",
+            price: 299,
+            oldPrice: 349,
+            badge: "新品",
+            image: "https://via.placeholder.com/300x200?text=黑悟空"
+        },
+        {
+            id: 3,
+            title: "艾尔登法环",
+            category: "角色扮演",
+            price: 249,
+            oldPrice: 299,
+            badge: "热销",
+            image: "https://via.placeholder.com/300x200?text=艾尔登法环"
+        },
+        {
+            id: 4,
+            title: "赛博朋克2077",
+            category: "角色扮演",
+            price: 179,
+            oldPrice: 229,
+            badge: "折扣",
+            image: "https://via.placeholder.com/300x200?text=赛博朋克2077"
+        },
+        {
+            id: 5,
+            title: "只狼：影逝二度",
+            category: "动作游戏",
+            price: 199,
+            oldPrice: 249,
+            badge: "经典",
+            image: "https://via.placeholder.com/300x200?text=只狼"
+        }
     ];
 
     const productGrid = document.getElementById('product-grid');
@@ -72,14 +115,32 @@ function loadProducts() {
                     ${product.oldPrice ? `<span class="old-price">¥${product.oldPrice}</span>` : ''}
                 </div>
                 <div class="product-actions">
-                    <button class="btn btn-cart"><i class="fas fa-cart-plus"></i> 加入购物车</button>
+                    <button class="btn btn-cart" data-id="${product.id}"><i class="fas fa-cart-plus"></i> 加入购物车</button>
                     <button class="btn btn-wishlist"><i class="fas fa-heart"></i></button>
                 </div>
             </div>
         `;
         productGrid.appendChild(productCard);
     });
+
+    // 添加购物车按钮事件
+    document.querySelectorAll('.btn-cart').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productId = parseInt(this.getAttribute('data-id'));
+            const product = products.find(p => p.id === productId);
+            
+            cartItems.push(product);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCartCount();
+            
+            // 显示添加成功提示
+            alert(`${product.title} 已添加到购物车`);
+        });
+    });
 }
+
+// 初始化购物车数量
+updateCartCount();
 
 // 初始化页面功能
 function initPage() {
