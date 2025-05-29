@@ -53,5 +53,5 @@ document.addEventListener('DOMContentLoaded', function() {
     updatePaymentMethod('wechat');
     
     // 提示用户设置二维码路径
-    alert('请设置支付二维码图片路径');
+    alert('二维码为真，勿扫');
 });
