@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏天堂 - 专业的在线游戏平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+       
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gamepad"></i>
+                游戏天堂
+            </a>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="搜索游戏...">
+                <button id="search-btn"><i class="fas fa-search"></i> 搜索</button>
+            </div>
+            <div class="nav-icons">
+                <a href="login.html" class="nav-icon" id="login-icon">
+                    <i class="fas fa-user"></i>
+                    <span id="login-text">登录/注册</span>
+                </a>
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-heart"></i>
+                    <span>收藏</span>
+                </a>
+                <a href="payment.html" class="nav-icon">
+                    <i class="fas fa-cart-shopping"></i>
+                    <span>购物车</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航菜单 -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="#">最新游戏</a></li>
+                <li><a href="#">游戏推荐</a></li>
+                <li><a href="#">游戏资讯</a></li>
+                <li><a href="#">游戏攻略</a></li>
+                <li><a href="#">游戏社区</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <div class="container page">
+        <!-- 轮播图 -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" style="background: linear-gradient(90deg, #5ee7df, #b490ca);">
+                    <div class="slide-content">
+                        <h2>暑期游戏狂欢</h2>
+                        <p>全场游戏低至5折起，新游上线抢先体验，限时优惠不容错过！</p>
+                    </div>
+                </div>
+                <div class="slide" style="background: linear-gradient(90deg, #d299c2, #fef9d7);">
+                    <div class="slide-content">
+                        <h2>最新游戏推荐</h2>
+                        <p>最热游戏推荐，带你探索全新世界，即刻加入游戏盛宴！</p>
+                    </div>
+                </div>
+                <div class="slide" style="background: linear-gradient(90deg, #a1c4fd, #c2e9fb);">
+                    <div class="slide-content">
+                        <h2>会员专享</h2>
+                        <p>注册会员即送200元游戏币，专享会员折扣，更多特权等你来！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active" data-index="0"></div>
+                <div class="slider-dot" data-index="1"></div>
+                <div class="slider-dot" data-index="2"></div>
+            </div>
+        </div>
+
+        <!-- 商品分类 -->
+        <section class="categories">
+            <h2 class="section-title"><i class="fas fa-list"></i> 游戏分类</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="action">
+                    <div class="category-icon">
+                        <i class="fas fa-skull-crossbones"></i>
+                    </div>
+                    <h3>动作游戏</h3>
+                </div>
+                <div class="category-card" data-category="strategy">
+                    <div class="category-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>策略游戏</h3>
+                </div>
+                <div class="category-card" data-category="adventure">
+                    <div class="category-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>冒险游戏</h3>
+                </div>
+                <div class="category-card" data-category="rpg">
+                    <div class="category-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3>角色扮演游戏</h3>
+                </div>
+                <div class="category-card" data-category="simulator">
+                    <div class="category-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>模拟游戏</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热卖游戏 -->
+        <section class="products">
+            <h2 class="section-title"><i class="fas fa-fire"></i> 热卖游戏</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- 游戏将通过JS动态加载 -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>关于我们</h3>
+                    <p>游戏天堂是一家专注于提供高品质游戏的在线平台，致力于为玩家带来最优质的娱乐体验。</p>
+                    <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-weixin"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-weibo"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" style="color: white; font-size: 1.4rem;"><i class="fab fa-xiaohongshu"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>购物指南</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 购物流程</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 会员介绍</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 常见问题</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>支付方式</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 微信支付</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 支付宝</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 银联支付</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 货到付款</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>关注我们</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 微信公众号</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 新浪微博</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 抖音</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> 小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 游戏天堂 版权所有 | 设计: 李娜 21215220605 </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+                
+            
+</body>
+</html>

@@ -1,0 +1,359 @@
+:root {
+    --primary: #ff6b6b;
+    --primary-light: #ff8e8e;
+    --secondary: #4ecdc4;
+    --secondary-light: #6bd9d2;
+    --dark: #2b2d42;
+    --darker: #1d1f2e;
+    --light: #f8f9fa;
+    --lighter: #ffffff;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    padding: 15px 0;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 25px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    background: #f8fafc;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+    outline: none;
+}
+
+.search-bar button {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    background: var(--secondary);
+    border: none;
+    border-radius: 50px;
+    padding: 8px 24px;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.search-bar button:hover {
+    background: var(--secondary-light);
+    transform: translateY(-1px);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 22px;
+    position: relative;
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-icon:hover {
+    transform: translateY(-3px);
+}
+
+.nav-icon i {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.nav-icon span {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: var(--danger);
+    color: white;
+    font-size: 0.75rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* 导航菜单 */
+nav {
+    background-color: var(--lighter);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 14px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-size: 1.05rem;
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* 页脚 */
+footer {
+    background: var(--darker);
+    color: white;
+    padding: 60px 0 25px;
+    margin-top: 70px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 14px;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a i {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.footer-links a:hover i {
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #adb5bd;
+    font-size: 0.95rem;
+}
+
+/* 按钮基础样式 */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* 页面切换动画 */
+.page {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        order: 1;
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+    }
+    
+    .search-bar {
+        order: 3;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+    
+    .nav-icons {
+        order: 2;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-icon span {
+        display: none;
+    }
+    
+    .nav-links a {
+        padding: 6px 10px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-icon span {
+        display: none;
+    }
+    
+    .nav-links a {
+        padding: 6px 10px;
+        font-size: 0.95rem;
+    }
+}
