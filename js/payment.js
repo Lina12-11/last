@@ -52,6 +52,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化默认支付方式
     updatePaymentMethod('wechat');
     
-    // 提示用户设置二维码路径
-    alert('二维码为真，勿扫');
+  
 });
