@@ -4,36 +4,37 @@
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;/* 设置容器的边框为圆角 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);/* 容器的阴影 */
 }
 
 .success-box {
     text-align: center;
-}
+}/* 元素内的文本内容水平居中对齐 */
 
 .success-icon {
-    font-size: 5rem;
+    font-size: 5rem;/* 字体大小 */
     color: #4CAF50;
-    margin-bottom: 1.5rem;
-}
+    margin-bottom: 1.5rem;/* 元素底部的外边距。 */
+}/* 成功图标 */
 
 .success-box h1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 1rem;
-}
+}/* 成功标题 */
 
 .success-message {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 2rem;
-}
+}/* 成功信息 */
 
 .action-buttons {
     margin-top: 2rem;
-}
+}/* 按钮 */
 
+/* 主要操作按钮设置 */
 .btn-primary {
     background-color: #4CAF50;
     color: white;
@@ -56,10 +57,14 @@
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 4px;
+    /*边缘变得圆润  */
     cursor: pointer;
+    /* 鼠标悬停时变为指针形状 */
     text-decoration: none;
+    /* 文字没有下划线 */
     font-size: 1rem;
     transition: background-color 0.3s;
+    /* 背景颜色变化的过渡效果 */
 }
 
 .btn-secondary:hover {

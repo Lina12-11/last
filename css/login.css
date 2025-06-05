@@ -2,6 +2,7 @@
 .login-container {
     display: flex;
     justify-content: center;
+    /* 主轴上的对齐方式 */
     align-items: center;
     min-height: calc(100vh - 200px);
     padding: 40px 0;
@@ -16,6 +17,7 @@
     padding: 45px;
     position: relative;
     overflow: hidden;
+    /* 控制元素内容超出其边界时的显示方式 */
 }
 
 .login-box::before {
@@ -124,7 +126,8 @@
     width: 0;
     height: 2px;
     background: var(--primary);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease;/* 使得宽度的变化会在0.3秒内以平滑的方式进行 */
+    
 }
 
 .form-footer a:hover::after {

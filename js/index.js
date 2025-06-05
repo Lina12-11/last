@@ -2,8 +2,11 @@
 function initSlider() {
     let currentSlide = 0;
     const slides = document.querySelector('.slides');
+    // 这些元素通常是轮播图的容器，用于存放幻灯片。
     const dots = document.querySelectorAll('.slider-dot');
+    // 这些元素通常是轮播图下方的指示点，用于切换不同的幻灯片。
     const totalSlides = slides.children.length;
+    // 计算幻灯片的总数。
     
     function showSlide(index) {
         if (index < 0) {
@@ -13,13 +16,17 @@ function initSlider() {
         } else {
             currentSlide = index;
         }
+        // 更新当前幻灯片的索引
 
         slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // 实现水平滑动幻灯片的效果
 
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === currentSlide);
         });
+        // 为对应的指示点添加 active 类，其他指示点移除 active 类
     }
+    
 
     if (!slides || !dots || totalSlides === 0) {
         console.error('幻灯片或指示点未正确初始化');
@@ -29,6 +36,7 @@ function initSlider() {
     dots.forEach(dot => {
         dot.addEventListener('click', function() {
             const index = parseInt(this.getAttribute('data-index'), 10);
+            // 当用户点击某个指示点时，获取该点对应的幻灯片索引
             showSlide(index);
         });
     });
@@ -36,6 +44,7 @@ function initSlider() {
     setInterval(() => {
         showSlide(currentSlide + 1);
     }, 5000);
+    //利用函数每隔 5000 毫秒（5 秒）自动调用，当显示到最后一张幻灯片，showSlide 会自动将 currentSlide 设置为 0
 }
 
 // 购物车功能
@@ -96,6 +105,7 @@ function loadProducts() {
             image: "https://via.placeholder.com/300x200?text=只狼"
         }
     ];
+    // 定义一组模拟的游戏产品数据
 
     const productGrid = document.getElementById('product-grid');
     if (!productGrid) return;
@@ -122,6 +132,7 @@ function loadProducts() {
         `;
         productGrid.appendChild(productCard);
     });
+    // 根据上面一组产品数据动态生成产品展示卡片，并将这些卡片添加到页面上的指定区域进行展示。包含了产品的图片、标签、分类、标题、价格以及操作按钮等信息
 
     // 添加购物车按钮事件
     document.querySelectorAll('.btn-cart').forEach(btn => {
@@ -142,7 +153,7 @@ function loadProducts() {
 // 初始化购物车数量
 updateCartCount();
 
-// 初始化页面功能
+// 初始化页面功能，通过调用函数确保了轮播图和添加购物车功能实现
 function initPage() {
     initSlider();
     loadProducts();

@@ -121,6 +121,7 @@
     box-shadow: var(--shadow-md);
 }
 
+/* 装饰条 */
 .category-card::before {
     content: '';
     position: absolute;
@@ -137,6 +138,7 @@
 .category-card:hover::before {
     transform: scaleX(1);
 }
+/* 装饰条会通过scaleX(1)的变换属性展宽到整个卡片宽度，会有0.4秒的过渡效果的动态效果。 */
 
 .category-icon {
     width: 80px;
@@ -187,6 +189,7 @@
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
 }
+/* 鼠标悬停在商品卡片，通过垂直方向上的移动和阴影效果的变化视觉效果 */
 
 .product-img {
     height: 220px;
@@ -206,7 +209,7 @@
     font-size: 0.85rem;
     font-weight: 600;
     z-index: 2;
-}
+}/* 在左上角商品卡片设计一个样式统一、位置固定的徽章，显示商品的特殊状态 */
 
 .product-info {
     padding: 22px;

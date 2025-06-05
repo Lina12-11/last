@@ -5,7 +5,7 @@ function setupLoginForm() {
     const passwordInput = document.getElementById('password');
     const usernameError = document.getElementById('username-error');
     const passwordError = document.getElementById('password-error');
-
+//实现基本的登录信息验证，如检查用户名和密码是否为空，
     if (!loginForm) return;
 
     loginForm.addEventListener('submit', function(event) {

@@ -116,6 +116,7 @@
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    /* 光标会变成一个手型指针 */
     transition: background 0.3s;
 }
 

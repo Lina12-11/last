@@ -13,3 +13,4 @@ function updateCartCount() {
         element.textContent = cartItems.length;
     });
 }
+// 更新页面上的购物车数量显示，确保用户看到的是最新的购物车状态。

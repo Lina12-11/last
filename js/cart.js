@@ -74,6 +74,7 @@ function updateCartSummary(items) {
     totalItemsElement.textContent = `${totalItems}件`;
     totalPriceElement.textContent = `¥${totalPrice}`;
 }
+//  该函数的主要功能是根据传入的购物车商品列表，计算购物车中的商品总数量和总价，
 
 // 更新购物车数量显示
 function updateCartCount() {
@@ -89,7 +90,9 @@ function updateCartCount() {
 function setupRemoveButtons() {
     document.querySelectorAll('.btn-remove').forEach(btn => {
         btn.addEventListener('click', function() {
+            // 为每个按钮添加点击事件监听器。当按钮被点击时，会触发所提供的回调函数
             const itemId = parseInt(this.getAttribute('data-id'));
+            // 调用删除购物车商品id
             removeCartItem(itemId);
         });
     });
@@ -99,7 +102,7 @@ function removeCartItem(itemId) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     cartItems = cartItems.filter(item => item.id !== itemId);
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    
+    // 点击删除购物车商品按钮时被调用
     // 重新渲染购物车
     initCartPage();
 }
